@@ -4,7 +4,7 @@ as a tech stack, I have used frontend or view layer as Thymeleaf for generating 
 and as a database as Mysql  
 
 API TEST POINT IS --
-GET TASK -->  /TASKS
-GET TASK BY ID --> /TASK/{taskid} 
-UPDATE TASK --- > /TASK/UPDATE/{taskid}
-DELETE Task --->  /TASK/DELETE/{taskid}
+1- GET TASK -->  /TASKS
+2- GET TASK BY ID --> /TASK/{taskid} 
+3- UPDATE TASK --- > /TASK/UPDATE/{taskid}
+4 -DELETE Task --->  /TASK/DELETE/{taskid}
