@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Task</title>
+    <!-- Bootstrap CSS link here -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa; /* Set background color as needed */
+        }
+
+        .container {
+            width: 60%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff; /* Set heading color as needed */
+        }
+
+        dl.row {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        dt {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        dd {
+            margin-bottom: 10px;
+        }
+
+        .btn-back {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>View Task</h2>
+        <dl class="row">
+            <dt class="col-sm-3">ID:</dt>
+            <dd class="col-sm-9" th:text="${task.taskId}"></dd>
+
+            <dt class="col-sm-3">Title:</dt>
+            <dd class="col-sm-9" th:text="${task.title}"></dd>
+
+            <dt class="col-sm-3">Description:</dt>
+            <dd class="col-sm-9" th:text="${task.description}"></dd>
+
+            <dt class="col-sm-3">Due Date:</dt>
+            <dd class="col-sm-9" th:text="${task.dueDate}"></dd>
+
+            <dt class="col-sm-3">Completed:</dt>
+            <dd class="col-sm-9" th:text="${task.completed}"></dd>
+        </dl>
+
+        <a class="btn btn-primary btn-back" th:href="@{/tasks}">Back to Task List</a>
+    </div>
+</body>
+</html>

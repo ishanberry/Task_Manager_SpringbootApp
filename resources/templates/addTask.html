@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <!-- Bootstrap CSS link here -->
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h2>Add Task</h2>
+        <form th:action="@{/tasks/save}" th:object="${task}" method="post">
+            
+           <div class="form-group">
+        <label for="id">TaskId:</label>
+        <input type="number" class="form-control" id="taskid" th:field="*{taskId}" required style="border-radius: 20px 20px; 
+                border: 2px solid black; ">
+   				 </div>
+            
+            <div class="form-group">
+				
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" th:field="*{title}" required style="border-radius: 20px 20px; 
+                border: 2px solid black;"> 
+            </div>
+            <div class="form-group">
+               
+                <label for="description">Description:</label>
+               
+                <input type="text" class="form-control" id="description" th:field="*{description}" required  style="border-radius: 20px 20px; 
+                border: 2px solid black;">
+                
+            </div>
+            <div class="form-group">
+               
+                <label for="dueDate">Due Date:</label>
+                
+                <input type="date" class="form-control" id="dueDate" th:field="*{dueDate}" style= " width: 350px; border-radius: 20px 20px ; 
+                border: 2px solid black;" 
+                required> 
+                
+                
+            </div>
+            <br />
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="completed" th:field="*{completed}" style="border-radius: 20px 20px; border: 2px solid black;">
+
+					<label class="form-check-label" for="completed">Completed</label>
+					</div>
+					<br />
+					<button type="submit" class="btn btn-primary">Add Task</button>
+					</form>
+					<br />
+					<a class="btn btn-secondary" th:href="@{/tasks}">Cancel</a>
+
+</html>
+
+
+
+
+
